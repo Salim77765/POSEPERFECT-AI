@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark tech theme with AI accents */
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 193 100% 60%;
+    --primary-foreground: 222 47% 4%;
+
+    --secondary: 222 47% 8%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 47% 8%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 193 100% 60%;
+    --accent-foreground: 222 47% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 47% 12%;
+    --input: 222 47% 8%;
+    --ring: 193 100% 60%;
+
+    --radius: 0.75rem;
+
+    /* AI/Tech specific colors */
+    --ai-primary: 193 100% 60%;
+    --ai-secondary: 270 100% 70%;
+    --ai-accent: 120 100% 60%;
+    --tech-glow: 193 100% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(193 100% 60%) 0%, hsl(270 100% 70%) 100%);
+    --gradient-background: linear-gradient(180deg, hsl(222 47% 4%) 0%, hsl(222 47% 6%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(222 47% 6%) 0%, hsl(222 47% 8%) 100%);
+    
+    /* Animations & Effects */
+    --glow-primary: 0 0 20px hsl(193 100% 60% / 0.3);
+    --glow-secondary: 0 0 30px hsl(270 100% 70% / 0.2);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 193 100% 60%;
+    --sidebar-primary-foreground: 222 47% 4%;
+    --sidebar-accent: 222 47% 8%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 12%;
+    --sidebar-ring: 193 100% 60%;
+  }
+
+  .dark {
+    /* Keep same dark theme - we're already dark by default */
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 6%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 6%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 193 100% 60%;
+    --primary-foreground: 222 47% 4%;
+    --secondary: 222 47% 8%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 47% 8%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 193 100% 60%;
+    --accent-foreground: 222 47% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 47% 12%;
+    --input: 222 47% 8%;
+    --ring: 193 100% 60%;
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 193 100% 60%;
+    --sidebar-primary-foreground: 222 47% 4%;
+    --sidebar-accent: 222 47% 8%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 12%;
+    --sidebar-ring: 193 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-background);
+    min-height: 100vh;
+  }
+  
+  /* Custom utility classes for AI theme */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  /* Animation keyframes */
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(193 100% 60% / 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 40px hsl(193 100% 60% / 0.6);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
