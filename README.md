@@ -105,4 +105,4 @@ Contributions are what make the open-source community such an amazing place to l
 
 
 ## Contact
-Your Name - salimansari786@outlook.in
+salimansari786@outlook.in
